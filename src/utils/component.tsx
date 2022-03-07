@@ -1,3 +1,6 @@
+import loadableRe from '@loadable/component';
+
+export const loadable = loadableRe;
 // import React from 'react';
 // import loadable from '@loadable/component';
 // import { Spin } from 'antd';
