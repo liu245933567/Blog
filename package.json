@@ -2,9 +2,10 @@
   "name": "vite-project",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://liu245933567.github.io/blog/",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node ./build/copyIndex",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"
   },
