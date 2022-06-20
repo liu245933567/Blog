@@ -1,11 +1,11 @@
 import React from 'react';
-import { Holidy } from './Holiday';
 import './index.less';
+import { Room } from './Room';
 
 export default function Home() {
   return (
     <div className="">
-      <Holidy />
+      <Room />
     </div>
   );
 }

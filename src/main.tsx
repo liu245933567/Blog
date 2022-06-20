@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import dayjs from 'dayjs';
 import dayjsLocal from 'dayjs/locale/zh-cn';
 import App from './App';
+import '@/style/index.css';
 
 dayjs.locale(dayjsLocal);
 

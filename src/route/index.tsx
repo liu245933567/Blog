@@ -4,4 +4,6 @@ export const Home = loadPage(() => import('@/pages/home'));
 
 export const QRcode = loadPage(() => import('@/pages/qrcode'));
 
+export const Room = loadPage(() => import('@/pages/room'));
+
 export const Face = loadPage(() => import('@/pages/face'));
