@@ -5,7 +5,7 @@ import { useRequest, queryComic } from '@/request';
 const { Search } = Input;
 
 export default function ComicHome() {
-  const { responseData, loading, toRequest } = useRequest(queryComic);
+  const { loading } = useRequest(queryComic);
 
   return (
     <div>
@@ -15,7 +15,7 @@ export default function ComicHome() {
           enterButton="搜索"
           size="large"
           loading={loading}
-          onSearch={() => {}}
+          // onSearch={() => {}}
         />
       </div>
     </div>
