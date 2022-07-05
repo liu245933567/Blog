@@ -8,10 +8,10 @@ import '@/style/index.less';
 function App() {
   return (
     <ConfigProvider locale={zhCN}>
-      <BrowserRouter basename="/blog/">
+      <BrowserRouter basename="/">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/" element={<Holiday />} />
+          <Route path="/holiday" element={<Holiday />} />
           <Route path="/qrcode" element={<QRcode />} />
           <Route path="/face" element={<Face />} />
           <Route path="/room" element={<Room />} />

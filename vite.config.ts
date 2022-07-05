@@ -4,7 +4,7 @@ import usePluginImport from 'vite-plugin-importer';
 import { resolve } from 'path';
 
 export default defineConfig({
-  base: '/blog/',
+  base: '/',
   plugins: [
     react(),
     usePluginImport({
