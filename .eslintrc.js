@@ -50,6 +50,7 @@ module.exports = {
     'no-plusplus': 0,
     // 强制驼峰法命名
     camelcase: 0,
+    'default-param-last': 0,
     'class-methods-use-this': 0,
     'no-unused-vars': 'off',
     'react/require-default-props': 0,    // 对象字面量项尾不能有逗号
