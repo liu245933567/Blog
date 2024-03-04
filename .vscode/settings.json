@@ -1,8 +1,0 @@
-{
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
-  "editor.tabSize": 2,
-  "px2rem.rootFontSize": 75,
-  "fileheader.tpl": "/*\r\n * @Author: {author}\r\n * @Description: 请添加描述！\r\n * @Date: {createTime}\r\n * @Last Modified by:   {lastModifiedBy}\r\n * @Last Modified time: {updateTime}\r\n */\r\n"
-}
