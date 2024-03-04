@@ -17,6 +17,7 @@
     "vuepress": "2.0.0-rc.0"
   },
   "dependencies": {
+    "@vercel/speed-insights": "^1.0.10",
     "vuepress-theme-reco": "2.0.0-rc.5"
   }
 }
