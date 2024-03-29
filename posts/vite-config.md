@@ -2,7 +2,7 @@
 title: Vite 常用配置
 date: 2024-03-15
 categories:
-  - Eslint
+  - Vite
 ---
 
 ## Gzip 压缩

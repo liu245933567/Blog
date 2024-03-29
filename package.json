@@ -1,24 +1,25 @@
 {
-  "name": "my-ini",
+  "name": "shanyoufusu-blog",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vitepress --open",
+    "build": "vitepress build",
+    "serve": "vitepress serve",
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "@vuepress/bundler-vite": "2.0.0-rc.0",
-    "@vuepress/client": "2.0.0-rc.0",
-    "vue": "^3.4.21",
-    "vuepress": "2.0.0-rc.0"
-  },
-  "dependencies": {
-    "@vercel/speed-insights": "^1.0.10",
-    "vuepress-theme-reco": "2.0.0-rc.6"
+    "@iconify/json": "^2.2.196",
+    "@types/markdown-it": "^13.0.7",
+    "@types/node": "^20.11.30",
+    "dayjs": "^1.11.10",
+    "gray-matter": "^4.0.3",
+    "typescript": "^5.4.3",
+    "unocss": "^0.58.7",
+    "vitepress": "^1.0.1",
+    "vue": "^3.4.21"
   }
 }
