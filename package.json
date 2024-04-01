@@ -15,6 +15,7 @@
     "@iconify/json": "^2.2.196",
     "@types/markdown-it": "^13.0.7",
     "@types/node": "^20.11.30",
+    "axios": "^1.6.8",
     "dayjs": "^1.11.10",
     "gray-matter": "^4.0.3",
     "typescript": "^5.4.3",

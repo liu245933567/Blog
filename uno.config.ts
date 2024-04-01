@@ -16,6 +16,17 @@ export default defineConfig({
     }),
   ],
 
+  rules: [
+    [
+      "no-scrollbar",
+
+      {
+        "-ms-overflow-style": "none",
+        "scrollbar-width": "none",
+      },
+    ],
+  ],
+
   // ...UnoCSS options
   theme: {
     colors: {

@@ -2,8 +2,6 @@ import DefaultTheme from "vitepress/theme";
 
 import "uno.css";
 
-import "./styles.css";
-
 /** @type {import('vitepress').Theme} */
 export default {
   extends: DefaultTheme,

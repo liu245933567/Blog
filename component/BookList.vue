@@ -16,7 +16,7 @@ const transformCoverImageUrl = (coverImageUrl: string) => {
     <ul>
       <li
         v-for="book of books"
-        class="list-none w-200 m-4 flex p-4 rounded-2 border border-solid border-[--vp-c-border] bg-[rgb(249,250,251)] dark:bg-[#202022]"
+        class="list-none m-4 flex p-4 rounded-2 border border-solid border-[--vp-c-border] bg-[rgb(249,250,251)] dark:bg-[#202022]"
       >
         <div class="w-40 h-60">
           <img
