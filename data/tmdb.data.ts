@@ -1,4 +1,15 @@
 import axios from "axios";
+import dotenv from "dotenv";
+import path from "path";
+import fs from "fs";
+
+const localFile = path.resolve(__dirname, "../.env.local");
+
+const catchFile = (p) => (fs.existsSync(p) ? p : "");
+
+dotenv.config({
+  path: catchFile(localFile),
+});
 
 /**
  * Interface for the TMDB API response
@@ -22,26 +33,24 @@ interface TMDBMovie {
 
 declare const data: TMDBMovie[];
 
-console.log("import.meta.env = ", import.meta.env);
-
 export { data };
 
 export default {
   async load() {
-    const url = `https://api.tmdb.org/3/account/${
-      import.meta.env.VITE_TMDB_ACCOUNT_ID
-    }/favorite/tv?language=zh-CN&page=1&sort_by=created_at.asc`;
+    const url = `https://api.tmdb.org/3/account/${process.env.VITE_TMDB_ACCOUNT_ID}/favorite/tv?language=zh-CN&page=1&sort_by=created_at.asc`;
 
     const options = {
       method: "GET",
       headers: {
         accept: "application/json",
-        Authorization: import.meta.env.VITE_AUTHORIZATION_TOKEN,
+        Authorization: process.env.VITE_AUTHORIZATION_TOKEN,
       },
     };
 
     try {
-      const { data } = await axios.get(url, options);
+      const { data } = await axios.get<{
+        results: TMDBMovie[];
+      }>(url, options);
 
       return data.results;
     } catch (error) {

@@ -1,11 +1,10 @@
 import { defineConfig } from "vitepress";
-import UnoCSS from "unocss/vite";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: "zh-CN",
   title: "山有扶苏的空间",
-  description: "A VitePress Site",
+  description: "一个记录生活的地方~",
   head: [
     [
       "link",
@@ -15,13 +14,6 @@ export default defineConfig({
       },
     ],
   ],
-  vite: {
-    // @ts-ignore
-    plugins: [UnoCSS()],
-    define: {
-      "process.env": {},
-    },
-  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: "https://s2.loli.net/2024/03/04/NpGLzUyWm7FkX1u.png",
@@ -29,6 +21,7 @@ export default defineConfig({
     nav: [
       { text: "查看博客", link: "/posts" },
       { text: "我的书单", link: "/books" },
+      { text: "我喜欢的影视", link: "/media-content" },
     ],
 
     // sidebar: [
