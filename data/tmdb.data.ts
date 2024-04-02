@@ -22,19 +22,21 @@ interface TMDBMovie {
 
 declare const data: TMDBMovie[];
 
+console.log("import.meta.env = ", import.meta.env);
+
 export { data };
 
 export default {
   async load() {
-    const url =
-      "https://api.themoviedb.org/3/account/16441706/favorite/tv?language=zh-CN&page=1&sort_by=created_at.asc";
+    const url = `https://api.tmdb.org/3/account/${
+      import.meta.env.VITE_TMDB_ACCOUNT_ID
+    }/favorite/tv?language=zh-CN&page=1&sort_by=created_at.asc`;
 
     const options = {
       method: "GET",
       headers: {
         accept: "application/json",
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MDQ1NWJiMjUwZjg0ZmFjYmI2ZDU1ZDkwNDcwMzk1NiIsInN1YiI6IjYzOThhNGU2ZmQ0YTk2MDA3Zjk3ZTZiNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.4CSu0_eshxPejYRRKKMgM3d2oBXaxPkOHnkKMqeY69U",
+        Authorization: import.meta.env.VITE_AUTHORIZATION_TOKEN,
       },
     };
 

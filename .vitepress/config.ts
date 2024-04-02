@@ -18,6 +18,9 @@ export default defineConfig({
   vite: {
     // @ts-ignore
     plugins: [UnoCSS()],
+    define: {
+      "process.env": {},
+    },
   },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
