@@ -5,7 +5,7 @@ import fs from "fs";
 
 const localFile = path.resolve(__dirname, "../.env.local");
 
-const catchFile = (p) => (fs.existsSync(p) ? p : "");
+const catchFile = (p: string) => (fs.existsSync(p) ? p : "");
 
 dotenv.config({
   path: catchFile(localFile),
@@ -29,15 +29,25 @@ interface TMDBMovie {
   name: string;
   vote_average: string;
   vote_count: string;
+
+  // 电影属性
+  title: string;
+  release_date: string;
 }
 
-declare const data: TMDBMovie[];
+type DataType = {
+  movies: TMDBMovie[];
+  tv: TMDBMovie[];
+};
+
+declare const data: DataType;
 
 export { data };
 
 export default {
-  async load() {
-    const url = `https://api.tmdb.org/3/account/${process.env.VITE_TMDB_ACCOUNT_ID}/favorite/tv?language=zh-CN&page=1&sort_by=created_at.asc`;
+  async load(): Promise<DataType> {
+    const movieUrl = `https://api.tmdb.org/3/account/${process.env.VITE_TMDB_ACCOUNT_ID}/favorite/movies?language=zh-CN&page=1&sort_by=created_at.asc`;
+    const tvUrl = `https://api.tmdb.org/3/account/${process.env.VITE_TMDB_ACCOUNT_ID}/favorite/tv?language=zh-CN&page=1&sort_by=created_at.asc`;
 
     const options = {
       method: "GET",
@@ -48,14 +58,24 @@ export default {
     };
 
     try {
-      const { data } = await axios.get<{
+      const { data: movieRes } = await axios.get<{
         results: TMDBMovie[];
-      }>(url, options);
+      }>(movieUrl, options);
 
-      return data.results;
+      const { data: tvRes } = await axios.get<{
+        results: TMDBMovie[];
+      }>(tvUrl, options);
+
+      return {
+        movies: movieRes.results,
+        tv: tvRes.results,
+      };
     } catch (error) {
       console.error(error);
-      return [];
+      return {
+        movies: [],
+        tv: [],
+      };
     }
   },
 };
