@@ -16,14 +16,14 @@
     "@types/markdown-it": "^13.0.7",
     "@types/node": "^20.11.30",
     "axios": "^1.6.8",
-    "dayjs": "^1.11.10",
+    "dayjs": "^1.11.11",
     "dotenv": "^16.4.5",
     "gray-matter": "^4.0.3",
     "typescript": "^5.4.3",
-    "unocss": "^0.58.7",
-    "vite": "^5.2.7",
-    "vitepress": "^1.0.2",
-    "vue": "^3.4.21"
+    "unocss": "^0.60.3",
+    "vite": "^5.2.11",
+    "vitepress": "^1.2.2",
+    "vue": "^3.4.27"
   },
   "dependencies": {
     "@vueuse/core": "^10.9.0"

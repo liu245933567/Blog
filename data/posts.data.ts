@@ -13,7 +13,7 @@ declare const data: Post[];
 
 export { data };
 
-export default createContentLoader("posts/*.md", {
+export default createContentLoader("posts/**/*.md", {
   excerpt: true,
   transform(raw): Post[] {
     return raw

@@ -165,3 +165,9 @@ docker run -d \
     -e UMASK=000  `# 掩码权限，默认000，可以考虑设置为022` \
     jxxghp/moviepilot:latest
 ```
+
+## metatube-server
+
+```shell
+docker run -d -p 8081:8080 -v /mnt/sata1-4/Configs/metatube-server:/config --name metatube metatube/metatube-server:latest -dsn /config/metatube.db
+```
