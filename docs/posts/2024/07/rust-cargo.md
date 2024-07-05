@@ -1,7 +1,9 @@
 ---
-title: 1.4 了解 Cargo
-date: 2024-05-22
+title: 了解 Cargo
+date: 2024-07-03
 categories:
+  - 编程技术
+tags:
   - Rust
 ---
 

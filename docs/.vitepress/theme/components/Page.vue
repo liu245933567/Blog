@@ -1,5 +1,5 @@
+<!-- 首页文章列表区域，对不同浏览器宽度做适配 -->
 <template>
-  <!-- 首页文章列表区域，对不同浏览器宽度做适配 -->
   <div
     class="postlist"
     :class="{
@@ -54,14 +54,18 @@
 import { useData } from 'vitepress';
 import { useStorage } from '@vueuse/core';
 import { Post } from '../types';
+import ArticleList from './ArticleList.vue';
+import PageASide from './PageASide.vue';
 
 const { theme, frontmatter } = useData();
 
 const listview = useStorage('listview', 'grid');
 
-defineProps<{
+const props = defineProps<{
   posts: Post[];
 }>();
+
+console.log(props);
 </script>
 
 <style scoped>

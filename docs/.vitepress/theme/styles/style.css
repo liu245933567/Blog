@@ -61,12 +61,6 @@
   width: 100%;
 }
 
-.bgimg {
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-}
-
 .postlist.grid {
   display: grid;
   row-gap: 1.1rem;

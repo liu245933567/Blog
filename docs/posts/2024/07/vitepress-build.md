@@ -1,16 +1,13 @@
 ---
 post: true
-title: 5款免费的iPhone14/14pro手机设备渲染模型，提供备用下载
+title: Vitepress 搭建个人博客
 date: 2024-07-03
-cover: https://image.baidu.com/search/down?url=https://fc.sinaimg.cn/large/6364aa43gy1hlbmt59d9kj20k00dcjyw.jpg
-coveross: https://cdn.enshimama.com/appbeebee/posts/iphone-pro-15-3d-mockups-free.gif
 categories:
-  - 设计
+  - 编程技术
 tags:
-  - 模型
-  - iPhone
-  - 设备
-description: 免费 iPhone14 设备渲染模型，方便将你的 APP UI进行成列展示。
+  - VitePress
+  - Blog
+description: 介绍使用 Vitepress 搭建个人博客的过程
 ---
 
 # VitePress 项目搭建

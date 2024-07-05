@@ -1,5 +1,5 @@
+<!-- 倒计时 -->
 <template>
-  <!-- 倒计时 -->
   <div ref="clock" :style="{ marginTop: '16px' }">
     <p class="time">
       {{ remainingFormatted }}

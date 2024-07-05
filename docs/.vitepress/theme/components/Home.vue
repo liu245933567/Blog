@@ -30,18 +30,19 @@ const activeCategory = ref('');
 const activeYear = ref('');
 const activeMonth = ref('');
 const selectTag = computed(() => activeTag.value);
+
 const selectCategory = computed(() => activeCategory.value);
+
 const selectYear = computed(() => activeYear.value);
 const selectMonth = computed(() => activeMonth.value);
 const bread = ref('全部内容');
 const breadrxt = computed(() => bread.value);
 
 const posts = computed(() => {
-  console.log("themeposts = ", themeposts);
+  console.log('themeposts = ', themeposts);
   if (selectCategory.value) {
     return themeposts.filter(
-      (article: any) =>
-        article?.frontmatter?.categories && article?.frontmatter?.categories.includes(selectCategory.value),
+      (article) => article?.frontmatter?.categories && article?.frontmatter?.categories.includes(selectCategory.value),
     );
   } else if (selectTag.value) {
     return themeposts.filter(
@@ -77,6 +78,7 @@ const currentpage = ref(1);
 
 // 获取当前第几页的的文章集合
 const getposts = computed(() => {
+  console.log('getposts = ', posts);
   return posts.value.slice(per_page.value * (currentpage.value - 1), per_page.value * currentpage.value);
 });
 
@@ -91,11 +93,13 @@ const pageChange = (e: any) => {
 router.onBeforeRouteChange = (to) => {
   const url = new URL(to, window.location.origin);
   const params = formatSearch(url.search);
+
   activeTag.value = params?.tag || '';
   activeCategory.value = params?.category || '';
   activeYear.value = params?.year || '';
   activeMonth.value = params?.month || '';
   currentpage.value = Number(params?.page) || 1;
+
   if (params?.tag) {
     console.log('new');
     bread.value = '标签：' + params.tag;

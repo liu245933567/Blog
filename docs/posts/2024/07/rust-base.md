@@ -2,6 +2,8 @@
 title: Rust 程序设计语言
 date: 2024-07-03
 categories:
+  - 编程技术
+tags:
   - Rust
 ---
 

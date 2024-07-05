@@ -1,7 +1,9 @@
 ---
 title: glob 文件匹配规则
-date: 2024-05-22
+date: 2024-07-05
 categories:
+  - 编程技术
+tags:
   - Node
 ---
 

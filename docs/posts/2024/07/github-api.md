@@ -2,8 +2,6 @@
 post: true
 title: Github API 调用
 date: 2024-07-05
-cover: https://image.baidu.com/search/down?url=https://fc.sinaimg.cn/large/6364aa43gy1hlbmt59d9kj20k00dcjyw.jpg
-coveross: https://cdn.enshimama.com/appbeebee/posts/iphone-pro-15-3d-mockups-free.gif
 categories:
   - 编程技术
 tags:

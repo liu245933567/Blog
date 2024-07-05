@@ -1,8 +1,8 @@
 <!-- 氛围组：烟花 https://github.com/Doener48/firework -->
 <template>
   <div
-    class="message"
     v-if="theme?.website?.showFirework"
+    class="message"
     :style="{
       top: windowHeight - 144 + 'px',
     }"
@@ -49,7 +49,7 @@
 </template>
 <script lang="ts" setup>
 import { onMounted, watch, ref, computed } from 'vue';
-import { useData, useRouter } from 'vitepress';
+import { useData } from 'vitepress';
 import { getRandomInt } from '../utils';
 
 const { isDark, theme } = useData();

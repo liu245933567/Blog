@@ -1,7 +1,10 @@
 ---
+post: true
 title: 语义化版本
 date: 2024-07-03
 categories:
+  - 编程技术
+tags:
   - 规范
 ---
 

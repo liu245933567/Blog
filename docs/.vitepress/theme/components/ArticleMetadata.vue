@@ -1,7 +1,7 @@
 <!-- 文章通用数据字段。根据判断是列表还是内页进行区分显示。type === 'single'表示在内页显示 -->
 <template>
-  <div class="articlemeta" :class="{ grid: listview === 'grid', list: listview === 'list' }">
-    <h1 class="h1" v-if="type === 'single'">{{ dataSource?.frontmatter?.title }}</h1>
+  <div class="articlemeta pt-3" :class="{ grid: listview === 'grid', list: listview === 'list' }">
+    <h1 class="text-3xl font-semibold mb-2" v-if="type === 'single'">{{ dataSource?.frontmatter?.title }}</h1>
     <div class="meta">
       <p class="date" v-if="dataSource?.frontmatter?.date">
         <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -19,7 +19,7 @@
           }}</time
         >
       </p>
-      <div class="tags" v-if="dataSource?.frontmatter?.tags">
+      <div v-if="dataSource?.frontmatter?.tags" class="tags">
         <template v-if="type !== 'single'">
           <span class="tag" v-for="item in dataSource.frontmatter.tags.slice(0, 2)"
             ><a class="a" :href="withBase(`/?tag=${item.toString()}`)"> {{ '#' + item }}</a></span
@@ -55,7 +55,7 @@ const listview = useStorage('listview', 'grid');
 const dataformat = ref(0);
 const props = defineProps<{
   article?: Post;
-  type?: string;
+  type?: 'single';
 }>();
 const dataSource = computed(() => props.article);
 
@@ -81,6 +81,7 @@ const imageTime = computed(() => {
   }
   return 175 + (n - 10) * 3;
 });
+
 const readTime = computed(() => {
   return Math.ceil((wordTime.value + imageTime.value) / 60);
 });
@@ -102,15 +103,6 @@ onMounted(() => {
 
 <style scoped>
 .articlemeta {
-  padding-top: 12px;
-
-  .h1 {
-    font-size: 1.87rem;
-    line-height: 2.25rem;
-    margin-bottom: 10px;
-    font-weight: bold;
-  }
-
   .meta {
     display: flex;
     flex-direction: row;

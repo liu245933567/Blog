@@ -1,41 +1,38 @@
 <template>
   <!-- 对页面布局做统筹管理 -->
   <Layout :class="{ home: frontmatter?.index }">
+    <!-- 页面不存在 -->
     <template #not-found>
-      <!-- 页面不存在 -->
       <div class="page404">
         <PageASide type="page404" />
       </div>
     </template>
+    <!-- 在布局下方添加 -->
     <template #layout-top>
       <ClientOnly>
-        <!-- 在布局下方添加 -->
         <div class="snow" v-if="theme.website?.showSnow && isDark">
           <div v-for="index in 80" :key="index" class="dot"></div>
         </div>
         <Lantern />
       </ClientOnly>
     </template>
-    <template #nav-bar-content-after>
-      <!-- 在导航 social后添加 -->
-    </template>
+    <!-- 在导航 social后添加 -->
+    <template #nav-bar-content-after> </template>
     <template #nav-screen-content-after></template>
+    <!-- 在导航搜索框💰添加 -->
     <template #nav-bar-content-before>
-      <!-- 在导航搜索框💰添加 -->
       <ClientOnly>
         <div v-if="!isPause" class="" style="padding-left: 32px; position: relative; height: 40px; margin-right: 0px">
           <Player />
         </div>
       </ClientOnly>
     </template>
-    <template #nav-bar-title-after>
-      <!-- 在标题后添加 -->
-    </template>
+    <!-- 在标题后添加 -->
+    <template #nav-bar-title-after></template>
     <template #sidebar-nav-before>
       <PageNavi />
-
       <div class="fireworkwrap">
-        <Firework></Firework>
+        <Firework />
       </div>
     </template>
     <template #doc-top>
