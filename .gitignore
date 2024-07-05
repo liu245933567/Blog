@@ -2,5 +2,15 @@ node_modules
 .temp
 .cache
 cache
+.DS_Store
 dist
-.env.local
+dist-ssr
+*.local
+.idea
+pnpm-lock.yaml
+smartmontools.md
+zsh_history.md
+/*.md
+/package-lock.json
+origin_theme.css
+.vitepress/cache

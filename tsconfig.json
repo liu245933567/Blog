@@ -1,11 +1,29 @@
 {
   "compilerOptions": {
-    "module": "NodeNext",
-    "allowJs": true,
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
     "strict": true,
     "jsx": "preserve",
-    "moduleResolution": "NodeNext",
-    "types": ["vite/client"]
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "lib": ["ESNext", "DOM"],
+    "types": [],
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
-  "include": [".vitepress/**/*", "./posts/**/*.vue", "./component/**/*.vue"]
+  "include": [
+    ".vitepress/**/*.ts",
+    ".vitepress/**/*.d.ts",
+    ".vitepress/**/*.tsx",
+    ".vitepress/**/*.vue",
+    ".vitepress/theme/basic.data.mts",
+    ".vitepress/theme/posts.data.ts",
+    "shims-vue.d.ts",
+  ],
+  "exclude": ["dist", "node_modules"]
 }
