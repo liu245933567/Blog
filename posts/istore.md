@@ -43,6 +43,7 @@ apt install fonts-noto-cjk-extra
 52.85.79.89 api.themoviedb.org
 13.225.41.40 api.themoviedb.org
 13.226.251.88 api.themoviedb.org
+13.226.251.88 api.themoviedb.org
 ```
 
 istore 中运行参数
