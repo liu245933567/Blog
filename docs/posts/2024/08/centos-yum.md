@@ -31,22 +31,34 @@ mirrorlist.centos.org无法访问，尝试切换到其他可用的镜像源
 
 1）进入到如下目录
 
-#cd /etc/yum.repos.d/
+```bash
+cd /etc/yum.repos.d/
+```
 
 2）备份CentOS-Base.repo 。
 
-#mv CentOS-Base.repo CentOS-Base.repo.bak
+```bash
+mv CentOS-Base.repo CentOS-Base.repo.bak
+```
 
-3）下载yum源 curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo
+3）下载yum源 
+
+```bash
+curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo
+```
 
 结合自己的Centos版本选择合适的yum源（查看Centos版本命令：Cat /etc/Centos-release）
 
 4）清楚以前所有的过时的yum缓存
 
-#yum clean all
+```bash
+yum clean all
+```
 
 5）重新生成yum缓存
 
-#yum makecache
+```bash
+yum makecache
+```
 
 6）测试，yum install vim OK
