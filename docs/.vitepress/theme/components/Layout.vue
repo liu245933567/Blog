@@ -50,7 +50,7 @@
         <!-- <ArticleLink v-if="(frontmatter?.post)" :key="md5(page.relativePath)" /> -->
         <PageASide v-if="frontmatter.index" />
       </ClientOnly>
-      <PageGZH />
+      <!-- <PageGZH /> -->
       <!-- <Links v-if="(frontmatter.index)" /> -->
     </template>
     <template #doc-footer-before>
@@ -68,7 +68,6 @@ import { useData } from 'vitepress';
 import { usePlayerStore } from '../store/player';
 import md5 from 'blueimp-md5';
 import DefaultTheme from 'vitepress/theme';
-import Copyright from './Copyright.vue';
 import Player from './Player.vue';
 import PageASide from './PageASide.vue';
 import Lantern from './Lantern.vue';
@@ -77,7 +76,8 @@ import Firework from './Firework.vue';
 import Home from './Home.vue';
 import ArticleBread from './ArticleBread.vue';
 import ArticleMetadata from './ArticleMetadata.vue';
-import PageGZH from './PageGZH.vue';
+// import PageGZH from './PageGZH.vue';
+// import Copyright from './Copyright.vue';
 import ArticleCC from './ArticleCC.vue';
 import ArticleRelate from './ArticleRelate.vue';
 
