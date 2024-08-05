@@ -5,7 +5,9 @@
       <div v-if="article" class="main">
         <div class="cover">
           <a :href="renderHref(article.relativePath)" class="a">
-            <img class="img bg-cover bg-center bg-no-repeat" :src="article.frontmatter?.cover"
+            <img
+              class="img bg-cover bg-center bg-no-repeat"
+              :src="article.frontmatter?.cover || getRandomImg()?.actualsrc"
           /></a>
         </div>
         <div class="msg">
@@ -34,6 +36,7 @@
 import { withBase } from 'vitepress';
 import { useStorage } from '@vueuse/core';
 import ArticleMetadata from './ArticleMetadata.vue';
+import { data as zhihuImgs } from '../data/zhimg.data';
 
 // const { theme, frontmatter } = useData();
 
@@ -46,6 +49,17 @@ defineProps<{
 }>();
 
 const renderHref = (href: string | undefined) => (href ? withBase(href) : undefined);
+
+const getRandomImg = () => {
+  if (zhihuImgs.length === 0) {
+    return null; // 如果数组为空，返回 null 或其他合适的默认值
+  }
+  const randomIndex = Math.floor(Math.random() * zhihuImgs.length);
+  return zhihuImgs[randomIndex];
+};
+
+const defaultCover =
+  'https://image.baidu.com/search/down?url=https://fc.sinaimg.cn/large/6364aa43gy1hlbmt59d9kj20k00dcjyw.jpg';
 </script>
 
 <style scoped>

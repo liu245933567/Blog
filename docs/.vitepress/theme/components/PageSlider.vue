@@ -64,7 +64,7 @@ import { useData } from 'vitepress';
 // 轮播插件。更多高级配置教程见 https://swiperjs.com/
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Navigation } from 'swiper/modules';
-import Countdown from './Countdown.vue';
+// import Countdown from './Countdown.vue';
 import 'swiper/css';
 import 'swiper/css/navigation';
 const { theme } = useData();

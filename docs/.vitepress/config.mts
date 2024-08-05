@@ -90,8 +90,7 @@ export default defineConfig({
       cardPosition: 3,
       cardMusic: true,
       cardCoffee: true,
-      coffeeQrcode:
-        'https://image.baidu.com/search/down?url=https://fc.sinaimg.cn/large/6364aa43gy1hm0f859sm6j208c08cabm.jpg', //打赏咖啡二维码图片地址。如果是跳转网页地址需自行修改代码
+      coffeeQrcode: 'https://s2.loli.net/2024/08/05/YUrdsWj4HPGNI1E.png',
       showLantern: false,
       lanternText: ['新', '年'],
       showFirework: false,
