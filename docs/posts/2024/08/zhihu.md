@@ -1,6 +1,6 @@
 ---
 post: true
-title: 用于知乎内容获取的js脚本
+title: 知乎脚本
 date: 2024-08-05
 categories:
   - 编程技术

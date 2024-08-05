@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useVModel } from "@vueuse/core";
+import { useVModel } from '@vueuse/core';
 
 const props = defineProps<{
   value?: string;
@@ -8,7 +8,7 @@ const props = defineProps<{
 
 const emit = defineEmits();
 
-const value = useVModel(props, "value", emit);
+const value = useVModel(props, 'value', emit);
 
 const onCheck = (v: string) => {
   value.value = v;
@@ -33,19 +33,13 @@ const onCheck = (v: string) => {
   <ul
     class="hidden text-sm font-medium text-center text-gray-500 rounded-lg shadow sm:flex dark:divide-gray-700 dark:text-gray-400"
   >
-    <li
-      v-for="({ label, value: v }, index) in options"
-      :key="v"
-      class="w-full focus-within:z-10"
-    >
+    <li v-for="({ label, value: v }, index) in options" :key="v" class="w-full focus-within:z-10">
       <a
         @click="onCheck(v)"
         href="#"
         :class="[
           'inline-block w-full p-4  hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-700 dark:hover:text-white',
-          v === value
-            ? 'text-gray-900 bg-gray-100 dark:bg-gray-700 dark:text-white'
-            : 'bg-white dark:bg-gray-800',
+          v === value ? 'text-gray-900 bg-gray-100 dark:bg-gray-700 dark:text-white' : 'bg-white dark:bg-gray-800',
           {
             'border-r border-r-solid border-gray-200 dark:border-gray-700':
               options.length > 1 && index !== options.length - 1,

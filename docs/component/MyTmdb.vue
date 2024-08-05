@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
-import { data as tmdbData } from "../data/tmdb.data";
-import Tabs from "./tabs.vue";
+import { computed, ref } from 'vue';
+import { data as tmdbData } from '../data/tmdb.data';
+import Tabs from './tabs.vue';
 
-const currentKey = ref("movies");
+const currentKey = ref('movies');
 
 const data = computed(() => {
-  console.log("tmdbData = ", tmdbData);
-  return currentKey.value === "tv" ? tmdbData.tv : tmdbData.movies;
+  console.log('tmdbData = ', tmdbData);
+  return currentKey.value === 'tv' ? tmdbData.tv : tmdbData.movies;
 });
 </script>
 
