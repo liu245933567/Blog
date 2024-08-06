@@ -1,0 +1,18 @@
+{
+  "Blog Init": {
+    "prefix": "blt",
+    "body": [
+      "---",
+      "post: true",
+      "title: ",
+      "date: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}",
+      "description: ",
+      "categories:",
+      "  - ",
+      "tags:",
+      "  - ",
+      "---",
+    ],
+    "description": "博客文档初始化",
+  },
+}
