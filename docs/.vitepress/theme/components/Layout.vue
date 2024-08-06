@@ -7,6 +7,7 @@
         <PageASide type="page404" />
       </div>
     </template>
+
     <!-- 在布局下方添加 -->
     <template #layout-top>
       <ClientOnly>
@@ -16,9 +17,11 @@
         <Lantern />
       </ClientOnly>
     </template>
+
     <!-- 在导航 social后添加 -->
-    <template #nav-bar-content-after> </template>
+    <template #nav-bar-content-after></template>
     <template #nav-screen-content-after></template>
+
     <!-- 在导航搜索框💰添加 -->
     <template #nav-bar-content-before>
       <ClientOnly>
@@ -27,24 +30,27 @@
         </div>
       </ClientOnly>
     </template>
+
     <!-- 在标题后添加 -->
     <template #nav-bar-title-after></template>
     <template #sidebar-nav-before>
       <PageNavi />
-      <div class="fireworkwrap">
+      <!-- <div class="fireworkwrap">
         <Firework />
-      </div>
+      </div> -->
     </template>
     <template #doc-top>
       <ClientOnly>
         <!-- <PageSlider v-if="frontmatter?.index" :key="md5(page.relativePath)"></PageSlider> -->
       </ClientOnly>
     </template>
+
     <template #doc-before>
       <Home v-if="frontmatter?.index" />
       <ArticleBread v-if="frontmatter?.post" :article="page" />
       <ArticleMetadata v-if="frontmatter?.post" type="single" :article="page" :key="md5(page.relativePath)" />
     </template>
+
     <template #aside-bottom>
       <ClientOnly>
         <!-- <ArticleLink v-if="(frontmatter?.post)" :key="md5(page.relativePath)" /> -->
@@ -58,10 +64,11 @@
       <ArticleRelate v-if="frontmatter?.post" :key="md5(page.relativePath)" />
     </template>
     <template #doc-bottom>
-      <Copyright />
+      <!-- <Copyright /> -->
     </template>
   </Layout>
 </template>
+
 <script lang="ts" setup>
 import { toRefs } from 'vue';
 import { useData } from 'vitepress';
@@ -72,7 +79,7 @@ import Player from './Player.vue';
 import PageASide from './PageASide.vue';
 import Lantern from './Lantern.vue';
 import PageNavi from './PageNavi.vue';
-import Firework from './Firework.vue';
+// import Firework from './Firework.vue';
 import Home from './Home.vue';
 import ArticleBread from './ArticleBread.vue';
 import ArticleMetadata from './ArticleMetadata.vue';

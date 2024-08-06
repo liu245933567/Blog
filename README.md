@@ -8,3 +8,5 @@ categories:
 # 关于我的博客
 
 随心而动
+
+本项目参考于 [APP比比](https://www.appbeebee.com)

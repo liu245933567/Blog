@@ -1,24 +1,46 @@
+<script lang="ts" setup>
+import { computed, ref } from 'vue';
+import { useData, withBase } from 'vitepress';
+import { initCats } from '../utils';
+import { data as themeposts } from '../data/posts.data';
+import Tags from './Tags.vue';
+import Archives from './Archives.vue';
+import CommonDropDown from './CommonDropDown.vue';
+
+let url = window.location.href.split('?')[1];
+let params = new URLSearchParams(url);
+const { page } = useData();
+const data = computed(() => initCats(themeposts));
+const props = defineProps<{
+  type?: string;
+}>();
+const selected = ref('');
+const choose = (e: string) => {
+  selected.value = e;
+};
+</script>
+
+<!-- 自定义主菜单。侧栏和首页顶栏菜单 -->
 <template>
-  <!-- 自定义主菜单。侧栏和首页顶栏菜单 -->
   <div class="mainnavi top" v-if="type === 'top'">
     <ul class="ul">
       <li class="li pc">
-        <VDropdown :distance="6" :placement="'bottom'">
-          <button class="tags a">
-            <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <path
-                d="M10.9042 2.10025L20.8037 3.51446L22.2179 13.414L13.0255 22.6063C12.635 22.9969 12.0019 22.9969 11.6113 22.6063L1.71184 12.7069C1.32131 12.3163 1.32131 11.6832 1.71184 11.2926L10.9042 2.10025ZM13.7327 10.5855C14.5137 11.3666 15.78 11.3666 16.5611 10.5855C17.3421 9.80448 17.3421 8.53815 16.5611 7.7571C15.78 6.97606 14.5137 6.97606 13.7327 7.7571C12.9516 8.53815 12.9516 9.80448 13.7327 10.5855Z"
-                fill="currentColor"
-              ></path></svg
-            >标签
-          </button>
-          <template #popper>
-            <Tags />
+        <CommonDropDown>
+          <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              d="M10.9042 2.10025L20.8037 3.51446L22.2179 13.414L13.0255 22.6063C12.635 22.9969 12.0019 22.9969 11.6113 22.6063L1.71184 12.7069C1.32131 12.3163 1.32131 11.6832 1.71184 11.2926L10.9042 2.10025ZM13.7327 10.5855C14.5137 11.3666 15.78 11.3666 16.5611 10.5855C17.3421 9.80448 17.3421 8.53815 16.5611 7.7571C15.78 6.97606 14.5137 6.97606 13.7327 7.7571C12.9516 8.53815 12.9516 9.80448 13.7327 10.5855Z"
+              fill="currentColor"
+            />
+          </svg>
+          标签
+          <template #popper="{ hide }">
+            <Tags @click-tag="hide" />
           </template>
-        </VDropdown>
+        </CommonDropDown>
       </li>
+
       <li class="li pc">
-        <VDropdown :distance="6" :placement="'bottom'">
+        <VDropdown :distance="6" placement="bottom">
           <button class="archives a">
             <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <path
@@ -32,6 +54,7 @@
           </template>
         </VDropdown>
       </li>
+
       <li
         class="li h5"
         @click="choose('tags')"
@@ -62,6 +85,7 @@
       </li>
     </ul>
   </div>
+
   <!-- 左侧边栏菜单 -->
   <div class="mainnavi left" v-else>
     <ul class="ul">
@@ -141,24 +165,6 @@
     </ul>
   </div>
 </template>
-
-<script lang="ts" setup>
-import { computed, ref } from 'vue';
-import { useData, withBase } from 'vitepress';
-import { initCats } from '../utils';
-import { data as themeposts } from '../data/posts.data';
-let url = window.location.href.split('?')[1];
-let params = new URLSearchParams(url);
-const { page } = useData();
-const data = computed(() => initCats(themeposts));
-const props = defineProps<{
-  type?: string;
-}>();
-const selected = ref('');
-const choose = (e: string) => {
-  selected.value = e;
-};
-</script>
 
 <style scoped>
 .h4 {
