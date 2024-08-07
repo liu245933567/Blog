@@ -1,3 +1,22 @@
+<script lang="ts" setup>
+import { computed, ref, toRefs } from 'vue';
+import { useData, withBase } from 'vitepress';
+import { useStorage } from '@vueuse/core';
+import { randomOne } from '../utils';
+import { data as themeposts } from '../data/posts.data';
+
+const listview = useStorage('listview', 'grid');
+
+const viewtype = (e: string) => {
+  listview.value = e;
+};
+const props = defineProps({
+  bread: String,
+  count: Number,
+});
+const randomdata = computed(() => randomOne(themeposts));
+</script>
+
 <!-- 首页文章列表控制条，可对文章进行列表和网格切换，使用永久缓存 -->
 <template>
   <div class="pagectrol">
@@ -41,25 +60,6 @@
     </div>
   </div>
 </template>
-
-<script lang="ts" setup>
-import { computed, ref, toRefs } from 'vue';
-import { useData, withBase } from 'vitepress';
-import { useStorage } from '@vueuse/core';
-import { randomOne } from '../utils';
-import { data as themeposts } from '../data/posts.data';
-
-const listview = useStorage('listview', 'grid');
-
-const viewtype = (e: string) => {
-  listview.value = e;
-};
-const props = defineProps({
-  bread: String,
-  count: Number,
-});
-const randomdata = computed(() => randomOne(themeposts));
-</script>
 
 <style scoped>
 .pagectrol {

@@ -1,23 +1,3 @@
-<template>
-  <!-- 存档页面。按年、月进行显示 -->
-  <div class="wrap">
-    <div class="archives">
-      <div class="archive" v-for="(item, name) in data">
-        <div class="year">
-          <a :href="withBase(`/?year=${name.toString()}`)"> {{ name.toString() }}</a>
-        </div>
-        <div class="months">
-          <span class="month" v-for="(cell, key) in item">
-            <a class="a" :href="withBase(`/?year=${name.toString()}&month=${key.toString()}`)">
-              {{ key.toString() }}<strong class="VPBadge tip strong mini">{{ item[key].length }}</strong></a
-            >
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script lang="ts" setup>
 import { computed } from 'vue';
 import { withBase } from 'vitepress';
@@ -49,6 +29,26 @@ function initArchives(post: Post[]) {
 
 const data = computed(() => initArchives(themeposts));
 </script>
+
+<!-- 存档页面。按年、月进行显示 -->
+<template>
+  <div class="wrap">
+    <div class="archives">
+      <div class="archive" v-for="(item, name) in data">
+        <div class="year">
+          <a :href="withBase(`/?year=${name.toString()}`)"> {{ name.toString() }}</a>
+        </div>
+        <div class="months">
+          <span class="month" v-for="(cell, key) in item">
+            <a class="a" :href="withBase(`/?year=${name.toString()}&month=${key.toString()}`)">
+              {{ key.toString() }}<strong class="VPBadge tip strong mini">{{ item[key].length }}</strong></a
+            >
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
 
 <style scoped>
 .wrap {

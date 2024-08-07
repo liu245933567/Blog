@@ -6,6 +6,7 @@ import FloatingVue from 'floating-vue';
 import Vue3Toasity, { type ToastContainerOptions } from 'vue3-toastify';
 
 import Layout from './components/Layout.vue';
+
 import 'floating-vue/dist/style.css';
 import 'uno.css';
 import './styles/style.css';

@@ -1,3 +1,28 @@
+<script lang="ts" setup>
+import { toRefs } from 'vue';
+import { useData } from 'vitepress';
+import { usePlayerStore } from '../store/player';
+import md5 from 'blueimp-md5';
+import DefaultTheme from 'vitepress/theme';
+import Player from './Player.vue';
+import PageASide from './PageASide.vue';
+import Lantern from './Lantern.vue';
+import NavLeft from './NavLeft.vue';
+import Home from './Home.vue';
+import ArticleBread from './ArticleBread.vue';
+import ArticleMetadata from './ArticleMetadata.vue';
+import ArticleCC from './ArticleCC.vue';
+import ArticleRelate from './ArticleRelate.vue';
+
+// import PageGZH from './PageGZH.vue';
+// import Copyright from './Copyright.vue';
+// import Firework from './Firework.vue';
+
+const { isPause } = toRefs(usePlayerStore());
+const { page, theme, frontmatter, isDark } = useData();
+const { Layout } = DefaultTheme;
+</script>
+
 <template>
   <!-- 对页面布局做统筹管理 -->
   <Layout :class="{ home: frontmatter?.index }">
@@ -34,7 +59,7 @@
     <!-- 在标题后添加 -->
     <template #nav-bar-title-after></template>
     <template #sidebar-nav-before>
-      <PageNavi />
+      <NavLeft />
       <!-- <div class="fireworkwrap">
         <Firework />
       </div> -->
@@ -68,30 +93,6 @@
     </template>
   </Layout>
 </template>
-
-<script lang="ts" setup>
-import { toRefs } from 'vue';
-import { useData } from 'vitepress';
-import { usePlayerStore } from '../store/player';
-import md5 from 'blueimp-md5';
-import DefaultTheme from 'vitepress/theme';
-import Player from './Player.vue';
-import PageASide from './PageASide.vue';
-import Lantern from './Lantern.vue';
-import PageNavi from './PageNavi.vue';
-// import Firework from './Firework.vue';
-import Home from './Home.vue';
-import ArticleBread from './ArticleBread.vue';
-import ArticleMetadata from './ArticleMetadata.vue';
-// import PageGZH from './PageGZH.vue';
-// import Copyright from './Copyright.vue';
-import ArticleCC from './ArticleCC.vue';
-import ArticleRelate from './ArticleRelate.vue';
-
-const { isPause } = toRefs(usePlayerStore());
-const { page, theme, frontmatter, isDark } = useData();
-const { Layout } = DefaultTheme;
-</script>
 
 <style scoped>
 .snowbanner {

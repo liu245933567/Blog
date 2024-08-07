@@ -1,16 +1,16 @@
-import { defineConfig, presetUno, presetIcons } from "unocss";
+import { defineConfig, presetUno, presetIcons } from 'unocss';
 
 export default defineConfig({
   content: {
-    filesystem: ["**/*.{html,ts,tsx,vue,md}"],
+    filesystem: ['**/*.{html,ts,tsx,vue,md}'],
   },
   presets: [
     presetUno(),
     presetIcons({
-      prefix: "i-",
+      prefix: 'i-',
       extraProperties: {
-        display: "inline-block",
-        "vertical-align": "middle",
+        display: 'inline-block',
+        'vertical-align': 'middle',
         // ...
       },
     }),
@@ -18,11 +18,11 @@ export default defineConfig({
 
   rules: [
     [
-      "no-scrollbar",
+      'no-scrollbar',
 
       {
-        "-ms-overflow-style": "none",
-        "scrollbar-width": "none",
+        '-ms-overflow-style': 'none',
+        'scrollbar-width': 'none',
       },
     ],
   ],
@@ -30,7 +30,8 @@ export default defineConfig({
   // ...UnoCSS options
   theme: {
     colors: {
-      // primary: "#D70C25",
+      'bg-alt': 'var(--vp-c-bg-alt)',
+      brand: 'var(--vp-c-brand)',
     },
   },
 });

@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 import { useWindowSize } from '@vueuse/core';
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 
 const count = ref(0);
 
 const { width } = useWindowSize();
 
-const isMobile = width.value < 768;
+const isMobile = computed(() => width.value <= 768);
 
 const onShow = () => {
   if (count.value === 0) {

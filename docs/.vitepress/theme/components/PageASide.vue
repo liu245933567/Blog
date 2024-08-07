@@ -1,3 +1,52 @@
+<script lang="ts" setup>
+import { ref, onMounted, computed, toRefs } from 'vue';
+import { useData } from 'vitepress';
+import { usePlayerStore } from '../store/player';
+import type { Song } from '../../theme/types';
+import { data as themeposts } from '../data/posts.data';
+const { theme, frontmatter } = useData();
+const { pushPlayList } = usePlayerStore();
+const { togglePlay, isPause } = toRefs(usePlayerStore());
+const songList = ref<Song[]>([]);
+songList.value = theme.value?.music ? theme.value.music : [];
+pushPlayList(true, ...songList.value);
+
+defineProps<{
+  type?: string;
+}>();
+const talkword = ref('听歌让我快乐');
+const movementx = ref(50);
+const movementy = ref(50);
+const pay = ref(false);
+
+const coffeepay = () => {
+  pay.value = !pay.value;
+};
+
+const totalArticles = computed(() => {
+  return themeposts.filter((article: any) => article?.frontmatter?.publish !== false);
+});
+const nowMonth = new Date().getMonth();
+const nowYear = new Date().getFullYear();
+const monthArticles = computed(() => {
+  return totalArticles.value.filter((article: any) => {
+    const pubDate = new Date(article?.frontmatter?.date);
+    return pubDate?.getMonth() === nowMonth && pubDate.getFullYear() === nowYear;
+  });
+});
+
+onMounted(() => {
+  // 当鼠标移动进行监听
+  window.addEventListener('mousemove', function (event: any) {
+    movementx.value = (event.clientX * 100) / window.innerWidth;
+    movementy.value = (event.clientY * 100) / window.innerHeight;
+    if (movementy.value < 40) {
+      movementy.value = 40;
+    }
+  });
+});
+</script>
+
 <!-- 首页以及 404 页面模块调用。一个CSS卡通名片，带动画交互 -->
 <template>
   <div class="pageaside">
@@ -78,7 +127,7 @@
                       d="M19.376 12.4161L8.77735 19.4818C8.54759 19.635 8.23715 19.5729 8.08397 19.3432C8.02922 19.261 8 19.1645 8 19.0658V4.93433C8 4.65818 8.22386 4.43433 8.5 4.43433C8.59871 4.43433 8.69522 4.46355 8.77735 4.5183L19.376 11.584C19.6057 11.7372 19.6678 12.0477 19.5146 12.2774C19.478 12.3323 19.4309 12.3795 19.376 12.4161Z"
                       fill="currentColor"
                     ></path></svg
-                  >播放音乐<span class="VPBadge warning strong mini">新年歌</span>
+                  >播放音乐
                 </div>
               </li>
               <li class="li" v-else @click="togglePlay">
@@ -155,55 +204,6 @@
     </div>
   </div>
 </template>
-
-<script lang="ts" setup>
-import { ref, onMounted, computed, toRefs } from 'vue';
-import { useData } from 'vitepress';
-import { usePlayerStore } from '../store/player';
-import type { Song } from '../../theme/types';
-import { data as themeposts } from '../data/posts.data';
-const { theme, frontmatter } = useData();
-const { pushPlayList } = usePlayerStore();
-const { togglePlay, isPause } = toRefs(usePlayerStore());
-const songList = ref<Song[]>([]);
-songList.value = theme.value?.music ? theme.value.music : [];
-pushPlayList(true, ...songList.value);
-
-const props = defineProps<{
-  type?: string;
-}>();
-const talkword = ref('听歌让我快乐');
-const movementx = ref(50);
-const movementy = ref(50);
-const pay = ref(false);
-
-const coffeepay = () => {
-  pay.value = !pay.value;
-};
-
-const totalArticles = computed(() => {
-  return themeposts.filter((article: any) => article?.frontmatter?.publish !== false);
-});
-const nowMonth = new Date().getMonth();
-const nowYear = new Date().getFullYear();
-const monthArticles = computed(() => {
-  return totalArticles.value.filter((article: any) => {
-    const pubDate = new Date(article?.frontmatter?.date);
-    return pubDate?.getMonth() === nowMonth && pubDate.getFullYear() === nowYear;
-  });
-});
-
-onMounted(() => {
-  // 当鼠标移动进行监听
-  window.addEventListener('mousemove', function (event: any) {
-    movementx.value = (event.clientX * 100) / window.innerWidth;
-    movementy.value = (event.clientY * 100) / window.innerHeight;
-    if (movementy.value < 40) {
-      movementy.value = 40;
-    }
-  });
-});
-</script>
 
 <style scoped>
 .total {

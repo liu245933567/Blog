@@ -1,12 +1,3 @@
-<template>
-  <!-- 首页。处理不同路由显示不同文章数据，包括 tag\category\year\month\pagesnum -->
-  <PageSlider />
-  <PageNavi type="top" />
-  <PageCtrol :bread="breadrxt" :count="posts.length" />
-  <Page :posts="getposts" />
-  <ArticlePage :page="currentpage" :totalPages="posts.length" :showPages="per_page" @update:page="pageChange" />
-</template>
-
 <script lang="ts" setup>
 import { computed, ref, onMounted, nextTick, watch } from 'vue';
 import { useBrowserLocation, useStorage } from '@vueuse/core';
@@ -16,7 +7,7 @@ import { data as themeposts } from '../data/posts.data';
 import { formatSearch } from '../utils';
 import Welcome from './Welcome.vue';
 import PageSlider from './PageSlider.vue';
-import PageNavi from './PageNavi.vue';
+import NavTop from './NavTop.vue';
 import PageCtrol from './PageCtrol.vue';
 import ArticlePage from './ArticlePage.vue';
 import Page from './Page.vue';
@@ -160,6 +151,16 @@ onMounted(() => {
   }
 });
 </script>
+
+<!-- 首页。处理不同路由显示不同文章数据，包括 tag\category\year\month\pagesnum -->
+<template>
+  <PageSlider />
+  <NavTop />
+  <PageCtrol :bread="breadrxt" :count="posts.length" />
+  <Page :posts="getposts" />
+  <ArticlePage :page="currentpage" :totalPages="posts.length" :showPages="per_page" @update:page="pageChange" />
+</template>
+
 <style>
 .Toastify__toast {
   overflow: visible !important;

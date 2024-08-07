@@ -1,9 +1,10 @@
 import { defineConfig } from 'vitepress';
 import mdItCustomAttrs from 'markdown-it-custom-attrs';
 import UnoCSS from 'unocss/vite';
+import { search as zhSearch } from './zh';
 
-import { head } from './theme/head';
-import type { ThemeConfig } from './theme/types';
+import { head } from './head';
+import type { ThemeConfig } from '../types';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -64,7 +65,13 @@ export default defineConfig({
       },
     ],
     search: {
-      provider: 'local',
+      provider: 'algolia',
+      options: {
+        appId: '8J64VVRP8K',
+        apiKey: 'a18e2f4cc5665f6602c5631fd868adfd',
+        indexName: 'vitepress',
+        ...zhSearch?.zh,
+      },
     },
     docFooter: {
       prev: '上一篇',
@@ -73,6 +80,14 @@ export default defineConfig({
     darkModeSwitchLabel: '暗黑切换',
     sidebarMenuLabel: '菜单',
     returnToTopLabel: '返回顶部',
+    article: {
+      cc: {
+        author: '山有扶苏',
+        authorLink: 'https://blog.oneddd.site',
+        license: '署名-相同方式共享 4.0 国际 (CC BY-SA 4.0)',
+        licenseLink: 'http://creativecommons.org/licenses/by-sa/4.0/',
+      },
+    },
     banner: [],
     outlineTitle: '目录',
     website: {
@@ -176,7 +191,9 @@ export default defineConfig({
       dark: '/logo.png',
     },
   } as ThemeConfig,
+
   srcExclude: ['README.md'],
+
   vite: {
     plugins: [UnoCSS()],
     server: {

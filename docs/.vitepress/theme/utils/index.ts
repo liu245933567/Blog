@@ -75,26 +75,6 @@ export function initTags(post: Post[]) {
   return data;
 }
 
-/** 获取所有分类 */
-export function initCats(post: Post[]) {
-  const data: any = {};
-  for (let index = 0; index < post.length; index++) {
-    const element = post[index];
-    const categories = element?.frontmatter?.categories;
-    if (categories) {
-      categories.forEach((item: any) => {
-        if (data[item]) {
-          data[item].push(element);
-        } else {
-          data[item] = [];
-          data[item].push(element);
-        }
-      });
-    }
-  }
-  return data;
-}
-
 /** 根据tag获取相关文章 */
 export function relatebyTags(post: Post[], article: any) {
   const data: any = {
