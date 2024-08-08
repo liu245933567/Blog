@@ -60,7 +60,7 @@ const choose = (e: string) => {
       </li>
       <li v-for="(_, key) in data" @click="choose(key.toString())">
         <NavLeftLink
-          :href="withBase(`/`)"
+          :href="withBase(`/?category=${key.toString()}`)"
           :badge="data[key].length"
           :checked="(params.get('category') === key.toString() && selected === '') || selected === key.toString()"
         >
@@ -74,7 +74,7 @@ const choose = (e: string) => {
     <ul class="p-y-2">
       <li @click="choose('feed')">
         <NavLeftLink
-          :href="withBase(`/pages/feed`)"
+          :href="withBase('/pages/feed')"
           :checked="(page.relativePath == 'pages/feed.md' && selected === '') || selected === 'feed'"
           icon="i-el:rss"
         >

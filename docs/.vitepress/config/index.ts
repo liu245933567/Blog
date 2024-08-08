@@ -67,9 +67,9 @@ export default defineConfig({
     search: {
       provider: 'algolia',
       options: {
-        appId: '8J64VVRP8K',
-        apiKey: 'a18e2f4cc5665f6602c5631fd868adfd',
-        indexName: 'vitepress',
+        appId: 'IE6CYWO4P2',
+        apiKey: '0f923ee67fb6351c0e6ded3024d574b1',
+        indexName: 'oneddd',
         ...zhSearch?.zh,
       },
     },
