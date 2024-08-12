@@ -10,4 +10,4 @@ tags:
   - 状态管理
 ---
 
-[zustand](zustand)
+[zustand](https://zustand-demo.pmnd.rs/)
