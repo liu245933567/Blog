@@ -21,6 +21,9 @@ export default defineConfig({
       });
     },
   },
+  sitemap: {
+    hostname: 'https://blog.oneddd.site'
+  },
   // https://vitepress.dev/reference/default-theme-config
   themeConfig: {
     nav: [],
