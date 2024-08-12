@@ -8,7 +8,7 @@ import type { ThemeConfig } from '../types';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  lang: 'zh-cn',
+  lang: "zh-CN",
   title: '山有扶苏的博客',
   description: '山有扶苏的博客',
   base: '/',
@@ -68,7 +68,7 @@ export default defineConfig({
       provider: 'algolia',
       options: {
         appId: 'IE6CYWO4P2',
-        apiKey: '0f923ee67fb6351c0e6ded3024d574b1',
+        apiKey: 'b103f8010bdcfc8cb4732574ca89beea',
         indexName: 'oneddd',
         ...zhSearch?.zh,
       },
