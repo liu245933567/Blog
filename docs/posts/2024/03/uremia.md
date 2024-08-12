@@ -1,8 +1,12 @@
 ---
+post: true
 title: 血液透析远期并发症
 date: 2024-03-26
 categories:
-  - Uremia
+  - 生活知识
+tags:
+  - 疾病
+  - 尿毒症
 ---
 
 ## 一、贫 血

@@ -1,8 +1,11 @@
 ---
+post: true
 title: 常用正则表达式
 date: 2024-04-01
 categories:
-  - 编程
+  - 编程技术
+tags:
+  - 正则
 ---
 
 ## 身份证号码

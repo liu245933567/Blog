@@ -1,7 +1,10 @@
 ---
+post: true
 title: Vite 常用配置
 date: 2024-03-15
 categories:
+  - 编程技术
+tags:
   - Vite
 ---
 

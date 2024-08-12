@@ -1,8 +1,13 @@
 ---
+post: true
 title: 常用 Eslint 插件
 date: 2024-03-15
+description: 
 categories:
+  - 编程技术技术
+tags:
   - Eslint
+  - 前端
 ---
 
 ## eslint-plugin-jsx-a11y

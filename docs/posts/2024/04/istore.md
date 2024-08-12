@@ -1,8 +1,12 @@
 ---
+post: true
 title: IStore 折腾记录
 date: 2024-04-08
 categories:
+  - 信息技术
+tags:
   - Nas
+  - IStore
 ---
 
 ## ADGhome
