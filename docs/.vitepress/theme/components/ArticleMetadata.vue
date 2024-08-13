@@ -1,49 +1,3 @@
-<!-- 文章通用数据字段。根据判断是列表还是内页进行区分显示。type === 'single'表示在内页显示 -->
-<template>
-  <div class="articlemeta pt-3" :class="{ grid: listview === 'grid', list: listview === 'list' }">
-    <h1 class="text-3xl font-semibold mb-2" v-if="type === 'single'">{{ dataSource?.frontmatter?.title }}</h1>
-    <div class="meta">
-      <p class="date" v-if="dataSource?.frontmatter?.date">
-        <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path
-            d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM13 12H17V14H11V7H13V12Z"
-          ></path>
-        </svg>
-        <time
-          class="time"
-          :datetime="
-            dataformat === 0 ? formatTime(dataSource?.frontmatter.date) : relativeTime(dataSource?.frontmatter.date)
-          "
-          >{{
-            dataformat === 0 ? formatTime(dataSource?.frontmatter.date) : relativeTime(dataSource?.frontmatter.date)
-          }}</time
-        >
-      </p>
-      <div v-if="dataSource?.frontmatter?.tags" class="tags">
-        <template v-if="type !== 'single'">
-          <span class="tag" v-for="item in dataSource.frontmatter.tags.slice(0, 2)"
-            ><a class="a" :href="withBase(`/?tag=${item.toString()}`)"> {{ '#' + item }}</a></span
-          >
-          <span class="tag" v-if="dataSource.frontmatter.tags.length > 2">...</span>
-        </template>
-        <template v-else>
-          <span class="tag" v-for="item in dataSource.frontmatter.tags"
-            ><a class="a" :href="withBase(`/?tag=${item.toString()}`)"> {{ '#' + item }}</a></span
-          >
-        </template>
-      </div>
-    </div>
-    <p class="readtime" v-if="type === 'single'">
-      <span class="warning">全文共{{ wordCount }}字，{{ '预计阅读' + readTime + '分钟' }}</span>
-    </p>
-    <!-- <div class="cover" v-if="type === 'single' && dataSource.frontmatter?.cover">
-      <p>
-        <img class="img" :src="dataSource.frontmatter.cover" alt="效果">
-      </p>
-    </div> -->
-  </div>
-</template>
-
 <script lang="ts" setup>
 import { computed, ref, onMounted } from 'vue';
 import { withBase } from 'vitepress';
@@ -100,6 +54,52 @@ onMounted(() => {
   analyze();
 });
 </script>
+
+<!-- 文章通用数据字段。根据判断是列表还是内页进行区分显示。type === 'single'表示在内页显示 -->
+<template>
+  <div class="articlemeta pt-3" :class="{ grid: listview === 'grid', list: listview === 'list' }">
+    <h1 class="text-3xl font-semibold mb-2" v-if="type === 'single'">{{ dataSource?.frontmatter?.title }}</h1>
+    <div class="meta">
+      <p class="date" v-if="dataSource?.frontmatter?.date">
+        <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM13 12H17V14H11V7H13V12Z"
+          ></path>
+        </svg>
+        <time
+          class="time"
+          :datetime="
+            dataformat === 0 ? formatTime(dataSource?.frontmatter.date) : relativeTime(dataSource?.frontmatter.date)
+          "
+          >{{
+            dataformat === 0 ? formatTime(dataSource?.frontmatter.date) : relativeTime(dataSource?.frontmatter.date)
+          }}</time
+        >
+      </p>
+      <div v-if="dataSource?.frontmatter?.tags" class="tags">
+        <template v-if="type !== 'single'">
+          <span class="tag" v-for="item in dataSource.frontmatter.tags.slice(0, 2)"
+            ><a class="a" :href="withBase(`/?tag=${item.toString()}`)"> {{ '#' + item }}</a></span
+          >
+          <span class="tag" v-if="dataSource.frontmatter.tags.length > 2">...</span>
+        </template>
+        <template v-else>
+          <span class="tag" v-for="item in dataSource.frontmatter.tags"
+            ><a class="a" :href="withBase(`/?tag=${item.toString()}`)"> {{ '#' + item }}</a></span
+          >
+        </template>
+      </div>
+    </div>
+    <p class="readtime" v-if="type === 'single'">
+      <span class="warning">全文共{{ wordCount }}字，{{ '预计阅读' + readTime + '分钟' }}</span>
+    </p>
+    <!-- <div class="cover" v-if="type === 'single' && dataSource.frontmatter?.cover">
+      <p>
+        <img class="img" :src="dataSource.frontmatter.cover" alt="效果">
+      </p>
+    </div> -->
+  </div>
+</template>
 
 <style scoped>
 .articlemeta {
