@@ -3,6 +3,7 @@ import { defineStore } from 'pinia';
 import type { Song } from '../types';
 import { getRandomInt } from '../utils';
 import { toast, type ToastOptions } from 'vue3-toastify';
+
 export const usePlayerStore = defineStore({
   id: 'Player',
   state: () => ({

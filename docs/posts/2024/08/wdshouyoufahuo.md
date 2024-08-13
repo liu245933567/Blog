@@ -4,7 +4,7 @@ title: 某道手游后台发货模板
 date: 2024-08-05
 description: 某道手游后台发货模板
 categories:
-  - 游戏架设
+  - 某道技术研究
 tags:
   - 某道手游
 ---

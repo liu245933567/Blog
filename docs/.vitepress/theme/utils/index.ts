@@ -75,52 +75,6 @@ export function initTags(post: Post[]) {
   return data;
 }
 
-/** 根据tag获取相关文章 */
-export function relatebyTags(post: Post[], article: any) {
-  const data: any = {
-    relate: [],
-  };
-  for (let index = 0; index < post.length; index++) {
-    const element = post[index];
-    const tags = element?.frontmatter?.tags;
-    const title = element?.frontmatter?.title;
-    if (tags) {
-      tags.forEach((item: any) => {
-        if (article.frontmatter.tags.includes(item) && title !== article.frontmatter.title) {
-          data['relate'].push(element);
-        }
-      });
-    }
-  }
-  let uniqueArr = Array.from(new Set(data.relate));
-  return uniqueArr;
-}
-
-/**
- * 获取所有存档
- * @param post
- * @returns
- */
-export function initArchives(post: Post[]) {
-  let data = {} as any;
-  for (let index = 0; index < post.length; index++) {
-    const element = post[index];
-    if (element?.frontmatter?.date) {
-      let y = new Date(element.frontmatter.date).getFullYear();
-      let m = new Date(element.frontmatter.date).getMonth() + 1 + '月';
-      if (!data[y]) {
-        data[y] = {};
-      }
-      if (!data[y][m]) {
-        data[y][m] = [];
-      }
-      data[y][m].push(element);
-    }
-  }
-  return data;
-}
-
-//
 const pattern =
   /[a-zA-Z0-9_\u0392-\u03C9\u00C0-\u00FF\u0600-\u06FF\u0400-\u04FF]+|[\u4E00-\u9FFF\u3400-\u4DBF\uF900-\uFAFF\u3040-\u309F\uAC00-\uD7AF]+/g;
 

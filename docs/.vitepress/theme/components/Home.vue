@@ -2,10 +2,10 @@
 import { computed, ref, onMounted, nextTick, watch } from 'vue';
 import { useBrowserLocation, useStorage } from '@vueuse/core';
 import { useData, useRouter } from 'vitepress';
-import { toast } from 'vue3-toastify';
+// import { toast } from 'vue3-toastify';
 import { data as themeposts } from '../data/posts.data';
 import { formatSearch } from '../utils';
-import Welcome from './Welcome.vue';
+// import Welcome from './Welcome.vue';
 import PageSlider from './PageSlider.vue';
 import NavTop from './NavTop.vue';
 import PageCtrol from './PageCtrol.vue';
@@ -133,23 +133,23 @@ watch(
     immediate: true,
   },
 );
-onMounted(() => {
-  if (
-    theme.value?.website?.showWelcome &&
-    ((theme.value?.website?.welcomeusestate && !welcomestate.value) || !theme.value?.website?.welcomeusestate)
-  ) {
-    nextTick(() => {
-      toast(Welcome, {
-        autoClose: theme.value?.website?.welcome?.autoClose ? theme.value.website.welcome.autoClose : false,
-        closeOnClick: false,
-        position: toast.POSITION.BOTTOM_RIGHT,
-      });
-      if (theme.value?.website?.welcomeusestate && !welcomestate.value) {
-        welcomestate.value = true;
-      }
-    });
-  }
-});
+// onMounted(() => {
+//   if (
+//     theme.value?.website?.showWelcome &&
+//     ((theme.value?.website?.welcomeusestate && !welcomestate.value) || !theme.value?.website?.welcomeusestate)
+//   ) {
+//     nextTick(() => {
+//       toast(Welcome, {
+//         autoClose: theme.value?.website?.welcome?.autoClose ? theme.value.website.welcome.autoClose : false,
+//         closeOnClick: false,
+//         position: toast.POSITION.BOTTOM_RIGHT,
+//       });
+//       if (theme.value?.website?.welcomeusestate && !welcomestate.value) {
+//         welcomestate.value = true;
+//       }
+//     });
+//   }
+// });
 </script>
 
 <!-- 首页。处理不同路由显示不同文章数据，包括 tag\category\year\month\pagesnum -->
@@ -162,7 +162,7 @@ onMounted(() => {
 </template>
 
 <style>
-.Toastify__toast {
+/* .Toastify__toast {
   overflow: visible !important;
-}
+} */
 </style>

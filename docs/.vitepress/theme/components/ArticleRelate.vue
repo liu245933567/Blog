@@ -1,5 +1,44 @@
+<script lang="ts" setup>
+import { computed } from 'vue';
+import { useData } from 'vitepress';
+import { useStorage } from '@vueuse/core';
+import { data as themeposts } from '../data/posts.data';
+import ArticleList from './ArticleList.vue';
+import { Post } from '../types';
+
+/** 根据tag获取相关文章 */
+function relatebyTags(post: Post[], article: any) {
+  const data = {
+    relate: [] as Post[],
+  };
+  for (let index = 0; index < post.length; index++) {
+    const element = post[index];
+    const tags = element?.frontmatter?.tags as string[];
+    const title = element?.frontmatter?.title as string;
+    if (tags) {
+      tags.forEach((item) => {
+        if (article.frontmatter.tags.includes(item) && title !== article.frontmatter.title) {
+          data['relate'].push(element);
+        }
+      });
+    }
+  }
+  let uniqueArr = Array.from(new Set(data.relate));
+
+  return uniqueArr;
+}
+
+const { theme, page, frontmatter } = useData();
+const listview = useStorage('listview', 'grid');
+const article = {
+  frontmatter: page.value?.frontmatter,
+  relativePath: page.value?.relativePath,
+};
+const posts = computed(() => relatebyTags(themeposts, article));
+</script>
+
+<!-- 文章内页底部的相关文章列表 -->
 <template>
-  <!-- 文章内页底部的相关文章列表 -->
   <div class="articlerelate" v-if="posts.length">
     <h2 class="h2">相关推荐</h2>
     <div
@@ -17,21 +56,6 @@
     </div>
   </div>
 </template>
-<script lang="ts" setup>
-import { computed, ref, toRefs, reactive } from 'vue';
-import { useData, withBase } from 'vitepress';
-import { useStorage } from '@vueuse/core';
-import { relatebyTags } from '../utils';
-import { data as themeposts } from '../data/posts.data';
-
-const { theme, page, frontmatter } = useData();
-const listview = useStorage('listview', 'grid');
-const article = {
-  frontmatter: page.value?.frontmatter,
-  relativePath: page.value?.relativePath,
-};
-const posts = computed(() => relatebyTags(themeposts, article));
-</script>
 
 <style scoped>
 .articlerelate {

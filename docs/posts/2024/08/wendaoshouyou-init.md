@@ -2,8 +2,9 @@
 post: true
 title: 某道手游架设
 date: 2024-08-04
+cover: https://blog-1300390935.cos.ap-beijing.myqcloud.com/1723514074278.png
 categories:
-  - 游戏架设
+  - 某道技术研究
 tags:
   - 某道手游
 description: 某道手游六周年测试端架设
