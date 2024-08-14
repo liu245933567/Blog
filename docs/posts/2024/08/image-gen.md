@@ -9,6 +9,15 @@ tags:
   - 图片处理
 ---
 
-ico 文件生成
+## 在线图片裁剪
 
-https://www.logosc.cn/favicon-generator
+[fotor 懒设计](https://www.fotor.com.cn/)
+
+
+## 图片压缩
+[TinyPNG – 智能压缩您的WebP、JPEG和PNG图片](https://tinify.cn/)
+
+
+## ico 文件生成
+
+[标小智](https://www.logosc.cn/favicon-generator)

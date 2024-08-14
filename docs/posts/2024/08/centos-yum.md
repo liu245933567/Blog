@@ -3,7 +3,7 @@ post: true
 title: 解决Centos无法yum源的问题
 date: 2024-07-05
 categories:
-  - 编程技术
+  - 信息技术
 tags:
   - CentOS
 description: 解决Centos无法yum源的问题

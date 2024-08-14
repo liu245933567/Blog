@@ -39,8 +39,8 @@ const posts = computed(() => relatebyTags(themeposts, article));
 
 <!-- 文章内页底部的相关文章列表 -->
 <template>
-  <div class="articlerelate" v-if="posts.length">
-    <h2 class="h2">相关推荐</h2>
+  <div v-if="posts.length">
+    <h2 class="text-xl mt-10 mb-4">相关推荐</h2>
     <div
       class="postlist"
       :class="{
@@ -56,16 +56,3 @@ const posts = computed(() => relatebyTags(themeposts, article));
     </div>
   </div>
 </template>
-
-<style scoped>
-.articlerelate {
-  .h2 {
-    font-size: 16px;
-    margin: 48px 0 16px;
-    border-top: 1px solid var(--vp-c-divider);
-    padding-top: 24px;
-    letter-spacing: -0.02em;
-    line-height: 32px;
-  }
-}
-</style>

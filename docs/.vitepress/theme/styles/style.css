@@ -39,16 +39,6 @@
   font-size: 17px;
 }
 
-.vp-doc a {
-  color: var(--vp-c-text-1);
-  font-weight: 500;
-  text-decoration: none;
-}
-
-.vp-doc h1:first-child {
-  display: none;
-}
-
 .vp-doc img {
   border-radius: 12px;
   border: 5px solid var(--vp-c-bg-alt);
