@@ -160,9 +160,3 @@ watch(
   <Page :posts="getposts" />
   <ArticlePage :page="currentpage" :totalPages="posts.length" :showPages="per_page" @update:page="pageChange" />
 </template>
-
-<style>
-/* .Toastify__toast {
-  overflow: visible !important;
-} */
-</style>

@@ -4,7 +4,7 @@ title: 某道手游 sdk 加解密
 date: 2024-08-22
 description:
 categories:
-  - 编程技术
+  - 某道技术研究
 tags:
   - 某道
 ---
