@@ -175,14 +175,17 @@ Ting
 
 | 属性名 | 值类型   | 属性讲解                               |
 | ------ | -------- | -------------------------------------- |
-| 49     | number   | 未知                                   |
+| 47     | number   | 未知 默认值1                           |
+| 49     | number   | 未知 首饰可设置成 320000               |
+| 55     | string   | 装备品阶 "金色"                        |
+| 226    | number   | 限时时间 示例: -1725461197 unix时间戳  |
 | 229    | Attr     | 物品属性                               |
 | 231    | Attr     | 物品属性                               |
 | 232    | number   | 物品存储位置                           |
 | 233    | :string: | 物品 ID 例如: ':66A9987B019AB5000101:' |
 | 240    | 8        | 未知                                   |
 | 243    | number   | 物品等级                               |
-| 244    | EquType  | 未知                                   |
+| 244    | EquType  | 装备类型                               |
 
 EquType
 
@@ -201,20 +204,78 @@ EquType
 
 Attr
 
-| 属性名 | 值类型 | 属性讲解       |
-| ------ | ------ | -------------- |
-| 2      | number | 力量           |
-| 5      | number | 体质           |
-| 10     | number | 灵力           |
-| 14     | number | 敏捷           |
-| 30     | number | 金相性         |
-| 32     | number | 水相性         |
-| 65     | number | 所有相性       |
-| 66     | number | 所有抗性       |
-| 67     | number | 所有抗异常     |
-| 68     | number | 所有技能上升   |
-| 90     | number | 忽视目标抗遗忘 |
-| 200    | number | 忽视所有抗异常 |
+| 属性名 | 值类型 | 属性讲解             |
+| ------ | ------ | -------------------- |
+| 2      | number | 力量                 |
+| 4      | number | 准确                 |
+| 5      | number | 体质                 |
+| 7      | number | 气血                 |
+| 8      | number | 防御                 |
+| 9      | number | 破防                 |
+| 10     | number | 灵力                 |
+| 13     | number | 法力                 |
+| 14     | number | 敏捷                 |
+| 15     | number | 速度                 |
+| 30     | number | 金相性               |
+| 31     | number | 木相性               |
+| 32     | number | 水相性               |
+| 33     | number | 火相性               |
+| 34     | number | 土相性               |
+| 36     | number | 金抗性               |
+| 37     | number | 水抗性               |
+| 42     | number | 抗中毒               |
+| 43     | number | 抗冰冻               |
+| 45     | number | 抗遗忘               |
+| 51     | number | 物理连击次数         |
+| 53     | number | 反击次数             |
+| 56     | number | 反击率               |
+| 57     | number | 物理连击率           |
+| 58     | number | 物理必杀率           |
+| 59     | number | 反震度               |
+| 60     | number | 反震率               |
+| 64     | number | 所有属性             |
+| 65     | number | 所有相性             |
+| 66     | number | 所有抗性             |
+| 67     | number | 所有抗异常           |
+| 68     | number | 所有技能上升         |
+| 73     | number | 破防率               |
+| 85     | number | 忽视目标抗金         |
+| 86     | number | 忽视目标抗木         |
+| 87     | number | 忽视目标抗水         |
+| 88     | number | 忽视目标抗火         |
+| 89     | number | 忽视目标抗土         |
+| 90     | number | 忽视目标抗遗忘       |
+| 91     | number | 忽视目标抗中毒       |
+| 92     | number | 忽视目标抗冰冻       |
+| 93     | number | 忽视目标抗昏睡       |
+| 94     | number | 忽视目标抗混乱       |
+| 95     | number | 强力克金             |
+| 96     | number | 强力克木             |
+| 97     | number | 强力克水             |
+| 98     | number | 强力克火             |
+| 99     | number | 强力克土             |
+| 100    | number | 师门攻击技能消耗降低 |
+| 101    | number | 师门障碍技能消耗降低 |
+| 102    | number | 师门辅助技能消耗降低 |
+| 103    | number | 强力中毒             |
+| 105    | number | 强力遗忘             |
+| 107    | number | 强力冰冻             |
+| 108    | number | 强金法伤害           |
+| 109    | number | 强木法伤害           |
+| 110    | number | 强水法伤害           |
+| 111    | number | 强火法伤害           |
+| 112    | number | 强土法伤害           |
+| 113    | number | 几率躲避攻击         |
+| 119    | number | 忽视所有抗性         |
+| 200    | number | 忽视所有抗异常       |
+| 201    | number | 几率解除遗忘状态     |
+| 202    | number | 几率解除中毒状态     |
+| 203    | number | 几率解除冰冻状态     |
+| 204    | number | 几率解除昏睡状态     |
+| 205    | number | 几率解除混乱状态     |
+| 252    | number | 强物理伤害           |
+| 297    | number | 伤害           |
+| 348    | number | 忽视躲避攻击         |
 
 ## 首饰备注
 
