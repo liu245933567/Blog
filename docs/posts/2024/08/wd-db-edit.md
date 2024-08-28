@@ -563,6 +563,14 @@ Attr
 
 ![f8a7a8b1a0b3b7df5d79ea363fa72b6.jpg](https://blog-1300390935.cos.ap-beijing.myqcloud.com/f8a7a8b1a0b3b7df5d79ea363fa72b6.jpg)
 
+![1724856278465.png](https://blog-1300390935.cos.ap-beijing.myqcloud.com/1724856278465.png)
+
+![1724856305226.png](https://blog-1300390935.cos.ap-beijing.myqcloud.com/1724856305226.png)
+
+![1724856347661.png](https://blog-1300390935.cos.ap-beijing.myqcloud.com/1724856347661.png)
+
+物伤 / 法伤 = 1.334
+
 ```txt
 55: "赤眼神龙枪: ([
     // 固定为 1
@@ -573,7 +581,7 @@ Attr
     54: 12,
     // 装备品阶
     55: \"绿色\",
-    // ？？？？？？？？？？？
+    // 相性
     224: 1,
     // ？？？？？？
     226: 0,
@@ -661,6 +669,7 @@ release_sldb
 ```sql
 select * from chat_history
 ```
+
 ## 消费积分修改
 
 user_data
