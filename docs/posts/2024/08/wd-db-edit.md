@@ -619,3 +619,39 @@ Attr
     282: \"mstunt_rate\",
 ])",
 ```
+
+## 清空宠物
+
+```sql
+update user_container_data set content='(["pets":([]),"guards":([]),])',checksum='581640212' where name ='66B0D0344295E60001F9'
+```
+
+## 全服统一道行
+
+![1724596501101.png](https://blog-1300390935.cos.ap-beijing.myqcloud.com/1724596501101.png)
+
+![1724596471429.png](https://blog-1300390935.cos.ap-beijing.myqcloud.com/1724596471429.png)
+
+## 更新上线邮件
+
+![1724596555433.png](https://blog-1300390935.cos.ap-beijing.myqcloud.com/1724596555433.png)
+
+```sql
+update mail_config set mail_title ='新人上线福利',  mail_content ='新人上线福利，请查收', attachment ='#I金元宝|金元宝#r888#I' where id ='1'
+```
+
+## 修改角色权限
+
+![1724596699788.png](https://blog-1300390935.cos.ap-beijing.myqcloud.com/1724596699788.png)
+
+```sql
+update account set privilege='300',checksum='6DB2C080E03C0B0954D7F0CEE4F12FAE' where account ='110001ceshi001'
+```
+
+## 查询聊天记录
+
+release_sldb
+
+```sql
+select * from chat_history
+```
