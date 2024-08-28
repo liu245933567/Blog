@@ -9,6 +9,10 @@ tags:
   - 某道
 ---
 
+ceshi4 `66A77AA3B6346C0001F9`
+
+黑土 `66A7C117A9D7D90001F9`
+
 ## 修改了等级
 
 92级
@@ -557,6 +561,8 @@ Attr
 
 ![1724595927919.png](https://blog-1300390935.cos.ap-beijing.myqcloud.com/1724595927919.png)
 
+![f8a7a8b1a0b3b7df5d79ea363fa72b6.jpg](https://blog-1300390935.cos.ap-beijing.myqcloud.com/f8a7a8b1a0b3b7df5d79ea363fa72b6.jpg)
+
 ```txt
 55: "赤眼神龙枪: ([
     // 固定为 1
@@ -619,3 +625,25 @@ Attr
     282: \"mstunt_rate\",
 ])",
 ```
+
+## 消费积分修改
+
+user_data
+
+```txt
+363: ([
+    "left_amount": 81819,
+    "score": 1036,
+    "deadline": 2016266400,
+    "last_time": 1724739955,
+    "total_score": 1036,
+    "used_quota": ([
+    ]),
+]),
+```
+
+## 发放幻宠
+
+上限八只
+
+松鼠 九尾狐 黑熊
